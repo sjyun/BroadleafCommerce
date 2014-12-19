@@ -1,0 +1,26 @@
+rootProject.name = 'broadleaf'
+include ':broadleaf-common'
+include ':core:broadleaf-profile'
+include ':core:broadleaf-profile-web'
+include ':core:broadleaf-framework'
+include ':core:broadleaf-framework-web'
+include ':core'
+include ':integration'
+include ':admin:broadleaf-admin-module'
+include ':admin:broadleaf-open-admin-platform'
+include ':admin:broadleaf-contentmanagement-module'
+include ':admin:broadleaf-admin-functional-tests'
+include ':admin'
+
+project(':broadleaf-common').projectDir = "$rootDir/common" as File
+project(':core:broadleaf-profile').projectDir = "$rootDir/core/broadleaf-profile" as File
+project(':core:broadleaf-profile-web').projectDir = "$rootDir/core/broadleaf-profile-web" as File
+project(':core:broadleaf-framework').projectDir = "$rootDir/core/broadleaf-framework" as File
+project(':core:broadleaf-framework-web').projectDir = "$rootDir/core/broadleaf-framework-web" as File
+project(':core').projectDir = "$rootDir/core" as File
+project(':integration').projectDir = "$rootDir/integration" as File
+project(':admin:broadleaf-admin-module').projectDir = "$rootDir/admin/broadleaf-admin-module" as File
+project(':admin:broadleaf-open-admin-platform').projectDir = "$rootDir/admin/broadleaf-open-admin-platform" as File
+project(':admin:broadleaf-contentmanagement-module').projectDir = "$rootDir/admin/broadleaf-contentmanagement-module" as File
+project(':admin:broadleaf-admin-functional-tests').projectDir = "$rootDir/admin/broadleaf-admin-functional-tests" as File
+project(':admin').projectDir = "$rootDir/admin" as File

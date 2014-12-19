@@ -1,0 +1,26 @@
+
+description = 'BroadleafCommerce Framework'
+dependencies {
+    compile group: 'org.apache.solr', name: 'solr-solrj', version:'4.7.2'
+    compile(group: 'org.apache.solr', name: 'solr-core', version:'4.4.0') {
+exclude(module: 'jdk.tools')
+    }
+    compile group: 'org.mvel', name: 'mvel2', version:'2.2.0.Final'
+  compile project(':broadleaf-common')
+  compile project(':core:broadleaf-profile')
+  compile project(':admin:broadleaf-contentmanagement-module')
+    compile group: 'commons-codec', name: 'commons-codec', version:'1.4'
+    compile group: 'org.codehaus.jackson', name: 'jackson-core-asl', version:'1.9.2'
+    compile group: 'joda-time', name: 'joda-time', version:'2.1'
+    compile group: 'net.sf.ehcache', name: 'ehcache', version:'2.7.2'
+  testCompile project(':broadleaf-common')
+    testCompile group: 'junit', name: 'junit', version:'4.11'
+    testCompile group: 'org.easymock', name: 'easymock', version:'2.5.1'
+    testCompile group: 'org.easymock', name: 'easymockclassextension', version:'2.4'
+}
+
+task packageTests(type: Jar) {
+  from sourceSets.test.output
+  classifier = 'tests'
+}
+artifacts.archives packageTests

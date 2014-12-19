@@ -1,0 +1,26 @@
+
+description = 'BroadleafCommerce Open Admin Platform'
+dependencies {
+  compile project(':broadleaf-common')
+    compile group: 'commons-pool', name: 'commons-pool', version:'1.5.6'
+    compile group: 'commons-fileupload', name: 'commons-fileupload', version:'1.2.2'
+    compile group: 'org.hibernate', name: 'hibernate-validator-annotation-processor', version:'4.1.0.Final'
+    compile group: 'javax.validation', name: 'validation-api', version:'1.0.0.GA'
+    compile group: 'com.twelvemonkeys.imageio', name: 'imageio-jpeg', version:'3.0-rc5'
+    testCompile group: 'junit', name: 'junit', version:'4.11'
+    testCompile group: 'org.hsqldb', name: 'hsqldb', version:'2.3.1'
+    testCompile group: 'org.codehaus.groovy', name: 'groovy-all', version:'2.1.8'
+  testCompile project(':broadleaf-common')
+    testCompile group: 'org.spockframework', name: 'spock-core', version:'0.7-groovy-2.0'
+    compile(group: 'javax.servlet', name: 'servlet-api', version:'2.5') {
+       /* This dependency was originally in the Maven provided scope, but the project was not of type war.
+       This behavior is not yet supported by Gradle, so this dependency has been converted to a compile dependency.
+       Please review and delete this closure when resolved. */
+    }
+}
+
+task packageTests(type: Jar) {
+  from sourceSets.test.output
+  classifier = 'tests'
+}
+artifacts.archives packageTests

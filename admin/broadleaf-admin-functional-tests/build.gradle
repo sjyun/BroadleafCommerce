@@ -1,0 +1,12 @@
+
+description = 'BroadleafCommerce Admin Functional Tests'
+dependencies {
+    compile group: 'org.apache.commons', name: 'commons-lang3', version:'3.3.2'
+    compile group: 'org.codehaus.groovy', name: 'groovy-all', version:'2.1.8'
+    compile group: 'org.gebish', name: 'geb-core', version:'0.9.3'
+    compile group: 'org.gebish', name: 'geb-spock', version:'0.9.3'
+    compile group: 'org.spockframework', name: 'spock-core', version:'0.7-groovy-2.0'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-support', version:'2.42.2'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-firefox-driver', version:'2.42.2'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-chrome-driver', version:'2.42.2'
+}
